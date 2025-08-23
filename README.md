@@ -1,6 +1,6 @@
 # RL Coverage Path Planning
 
-Code implementation for the paper [__Learning Coverage Paths in Unknown Environments with Deep Reinforcement Learning, arXiv, 2023__](https://arxiv.org/pdf/2306.16978.pdf).
+Code implementation of the conference paper [__Learning Coverage Paths in Unknown Environments with Deep Reinforcement Learning, ICML, 2024__](https://proceedings.mlr.press/v235/jonnarth24a.html), and its journal extension [__Sim-to-Real Transfer of Deep Reinforcement Learning Agents for Online Coverage Path Planning, IEEE Access, 2025__](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11039829).
 
 Lawn mowing | Exploration
 :-------------------------:|:-------------------------:
@@ -32,3 +32,30 @@ Check how the trained agent performs:
 
 Run tests:
 * Run `pytest` from the root folder.
+
+## Cite
+
+Conference paper:
+```
+@InProceedings{jonnarth2024icml,
+  title = {Learning Coverage Paths in Unknown Environments with Deep Reinforcement Learning},
+  author = {Jonnarth, Arvi and Zhao, Jie and Felsberg, Michael},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  series = {Proceedings of Machine Learning Research},
+  year = {2024},
+  volume = {235},
+  pages = {22491--22508},
+}
+```
+
+Journal extension:
+```
+@article{jonnarth2025access,
+  title = {Sim-to-Real Transfer of Deep Reinforcement Learning Agents for Online Coverage Path Planning},
+  author = {Jonnarth, Arvi and Johansson, Ola and Zhao, Jie and Felsberg, Michael},
+  journal = {IEEE Access},
+  year = {2025},
+  volume = {13},
+  pages = {106883-106905},
+}
+```
