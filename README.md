@@ -15,6 +15,8 @@ WITHOUT total variation reward | WITH total variation reward
 * [Install miniconda](https://docs.conda.io/en/latest/miniconda.html)
 * `conda create -n rlm python=3.9`
 * `conda activate rlm`
+* `pip install setuptools==65.5.0 pip==21`
+* `pip install wheel==0.38.0`
 * (CPU) `pip install torch==1.13.1+cpu torchvision==0.14.1+cpu -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu`
 * (GPU) `pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu116`
 
@@ -27,6 +29,20 @@ Train an RL agent for CPP in a simulated 2D environment (reduce `--buffer_size` 
 Check how the trained agent performs:
 * Plot logs: `python plot.py --load my-experiment`
 * Render: `python eval.py --load my-experiment`
+
+Run full quantitative evaluation and show the resulting paths and metrics:
+* Run eval: `python eval.py --load my-experiment --verbose --no-render --metrics_dir metrics`
+* Show path: `python show_path.py --metrics_dir my-experiment/metrics --type eval --episode 1`
+
+## Pre-trained weights
+
+Pre-trained weights can be found at [this link](https://drive.google.com/file/d/1hJXxRQTaFd0MEuB2UuQT9D6I-p_QXiAM/view?usp=sharing). The zip file contains three models:
+* __exploration__: An exploration CPP model configured for Explore-Bench.
+* __mowing_tv1__: A CPP model for the lawn mowing task, with an incremental TV reward of 1.
+* __mowing_tv2__: Same as _mowing_tv1_, but with TV reward = 2. Makes slightly nicer looking patterns, but has slower coverage times on average.
+
+Each folder contains a metrics folder. Visualize the paths like this:
+* `python show_path.py --metrics_dir weights/mowing_tv1/metrics --type eval --episode 1`
 
 ## Tests
 
